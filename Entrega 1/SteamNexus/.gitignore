@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+data/raw/
+data/interim/
+data/processed/
+artifacts/
+.vscode/
+.idea/
+*.log

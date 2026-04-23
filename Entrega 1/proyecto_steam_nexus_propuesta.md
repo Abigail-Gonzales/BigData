@@ -14,19 +14,17 @@ La idoneidad de este proyecto para el curso radica en la naturaleza masiva y com
 
 ## 2. Inventario de Fuentes
 
-- **Nombre:** Steam Dataset 2025: Multi-Modal Gaming Analytics Platform.
-- **Origen:** [Kaggle](https://www.kaggle.com/datasets/crainbramp/steam-dataset-2025-multi-modal-gaming-analytics).
+- **Nombre:** Steam Games & Reviews Dataset (2024).
+- **Origen:** [Kaggle - Games](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset) y [Kaggle - Reviews](https://www.kaggle.com/datasets/andrewmvd/steam-reviews).
 - **Licencia:** CC BY-NC-SA 4.0.
-- **Formato:** CSV y PostgreSQL Dump.
-- **Tamaño Estimado:** ~239,664 aplicaciones y >1,000,000 reseñas (~2GB+).
+- **Formato:** CSV.
+- **Tamaño Estimado:** ~123,000 juegos y >6.4M reseñas (~2GB+ total).
 
 ## 3. Borrador de Esquema
 
 ### Tablas Principales:
-1. **Games (Apps):** `app_id`, `name`, `release_date`, `price`, `description`, `developer`, `publisher`.
-2. **Genres/Tags:** `tag_id`, `tag_name`.
-3. **Game_Tags (Join):** `app_id`, `tag_id`.
-4. **Reviews:** `review_id`, `app_id`, `user_id`, `review_text`, `score`, `playtime_at_review`.
+1. **Games (Apps):** `AppID`, `Name`, `Release date`, `Price`, `About the game`, `Developers`, `Publishers`, `Genres`, `Tags`.
+2. **Reviews:** `app_id`, `app_name`, `review_text`, `review_score`, `review_votes`.
 
 ### Uniones Esperadas:
 - `Games` <-> `Game_Tags` <-> `Genres` para análisis de grafos de tags.
