@@ -161,10 +161,20 @@ The development of *Steam Nexus* is guided by principles of transparency and res
 
 ## 8. Technical Expectation: Pipeline Execution
 
-To meet the reproducibility requirement, the ingestion and cleaning of the dataset have been consolidated into a single production script.
+To meet the reproducibility requirement, the data ingestion and cleaning have been consolidated into production scripts.
 
-### Execution Command
-From the project root, run the following command to generate the clean dataset:
+### 8.1 Data Ingestion (Automated)
+To download the raw data directly from Kaggle and place it in the correct directory:
+
+1. Configure your `.env` file with `KAGGLE_USERNAME` and `KAGGLE_KEY`.
+2. Run the ingestion script:
+```powershell
+python src/ingestion.py
+```
+**Effect:** Downloads and renames `steam_games_raw.csv` and `steam_reviews_raw.csv` into `data/raw/`.
+
+### 8.2 Data Cleaning
+Once the raw data is present, run the cleaning pipeline:
 
 ```powershell
 python src/data_cleaning.py
@@ -173,7 +183,7 @@ python src/data_cleaning.py
 **Technical Parameters:**
 - **Input:** `data/raw/steam_games_raw.csv`
 - **Output:** `data/processed/steam_games_cleaned_v1.csv`
-- **Dependencies:** See `requirements.txt` (Pandas, Numpy).
+- **Dependencies:** See `requirements.txt` (Pandas, Numpy, Kaggle, python-dotenv).
 
 Boogaard, K. (2024). How to get unstuck: tips for moving past analysis paralysis. Work Life by Atlassian. https://www.atlassian.com/blog/productivity/analysis-paralysis
 

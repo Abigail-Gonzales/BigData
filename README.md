@@ -28,12 +28,21 @@ This repository contains the projects and developments for the **Big Data** cour
 
 ## 🛠️ Requirements
 
-1.  **Data Download:** You must download the Steam datasets (Games and Reviews) from **Kaggle** (e.g., [Steam Games Dataset](https://www.kaggle.com/datasets/fronkongin/steam-games-dataset)) and place them in the `SteamNexus/data/raw/` directory before running the pipeline. Ensure files are named `steam_games_raw.csv` and `steam_reviews_raw.csv`.
-2.  **Installation:** Run the following command to install the necessary libraries:
-
-```bash
-pip install -r requirements.txt
-```
+1.  **Environment Setup:**
+    - Create a `.env` file in the `SteamNexus/` directory.
+    - Use `SteamNexus/.env.example` as a template and fill in your Kaggle API credentials.
+2.  **Installation:** Install the necessary libraries:
+    ```bash
+    pip install -r SteamNexus/requirements.txt
+    ```
+3.  **Data Ingestion (Automated):**
+    To download and prepare the datasets automatically, run:
+    ```bash
+    python SteamNexus/src/ingestion.py
+    ```
+    This will download the datasets from Kaggle and place them in `SteamNexus/data/raw/` with the correct names (`steam_games_raw.csv` and `steam_reviews_raw.csv`).
+4.  **Data Ingestion (Manual):**
+    If you prefer manual download, get the datasets from Kaggle ([Games](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset) and [Reviews](https://www.kaggle.com/datasets/andrewmvd/steam-reviews)) and place them in `SteamNexus/data/raw/` as `steam_games_raw.csv` and `steam_reviews_raw.csv`.
 
 ---
 
