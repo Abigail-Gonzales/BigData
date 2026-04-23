@@ -17,7 +17,7 @@
 ## 2. Inventario de Fuentes
 
 - **Nombre:** Steam Dataset 2025: Multi-Modal Gaming Analytics Platform.
-- **Origen:** [Kaggle](https://www.kaggle.com/datasets/steam-dataset-2025).
+- **Origen:** [Kaggle](https://www.kaggle.com/datasets/crainbramp/steam-dataset-2025-multi-modal-gaming-analytics).
 - **Licencia:** CC BY-NC-SA 4.0.
 - **Formato:** CSV y PostgreSQL Dump.
 - **Tamaño Estimado:** ~239,664 aplicaciones y >1,000,000 reseñas (~2GB+).
